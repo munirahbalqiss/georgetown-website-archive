@@ -1,0 +1,221 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #fff; /* Text color to contrast with the background */
+    background-image: url("images/background.jpg"); /* Corrected path */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column; /* Flexbox for body */
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+main {
+    flex: 1; /* Ensures footer is pushed to the bottom */
+}
+
+/* Header Section */
+header {
+    width: 100%;
+    background: #333; /* Or any color you prefer */
+    padding: 1rem 0;
+    z-index: 10;
+    position: relative; /* Ensure no sticky or fixed positioning */
+    top: 0;
+    left: 0;
+}
+
+
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .logo {
+    width: 120px; /* Adjust the logo size */
+    height: auto;
+    margin-right: 10px; /* Add space between logo and text */
+}
+
+header .logo-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+header nav {
+    margin-top: 1rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center navigation menus */
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    margin: 0 15px; /* Add spacing between menu items */
+    position: relative; /* For underline animation */
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+header nav ul li a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 0;
+    background: #4a6fa5; /* Underline color */
+    transition: width 0.3s ease; /* Smooth underline animation */
+    margin: 0 auto; /* Center the underline */
+}
+
+header nav ul li a:hover {
+    color: #4a6fa5;
+}
+
+header nav ul li a:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+/* Main Content */
+main {
+    padding: 2rem 0;
+    background: rgba(0, 0, 0, 0.5); /* Transparent overlay for readability */
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+/* Section Styles */
+.section {
+    padding: 2rem;
+    margin: 2rem 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    color: #fff;
+    border-radius: 10px;
+}
+
+/* Penang Explanation Section */
+.penang-section {
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+/* Three-Division Section */
+.three-division {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+/* Division Styles */
+.division {
+    flex: 1; /* Equal space for all divisions */
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker background for contrast */
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.division h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #4a6fa5; /* Accent color for headings */
+}
+
+.division p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .three-division {
+        flex-direction: column;
+    }
+
+    .division {
+        margin-bottom: 1.5rem;
+    }
+}
+/* Image and Button Styles */
+.image-section {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.heritage-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    background-color: #4a6fa5; /* Blue background */
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3a5b8f; /* Darker blue on hover */
+}
+
+
+/* CTA Section */
+.cta {
+    text-align: center;
+    background: rgba(74, 111, 165, 0.8); /* Semi-transparent CTA background */
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin: 0 0 1rem;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent footer background */
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    color: #fff;
+    position: relative;
+}

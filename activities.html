@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georgetown Website Archive</title>
+    <link rel="stylesheet" href="styles.css">
+
+    
+    <style>
+        /* Main Heading */
+        .main-heading {
+        width: 100%; /* Ensure it takes full width */
+        margin: 30px auto;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center; /* Center the text */
+        color: #ffffff; /* White text for contrast */
+        padding: 20px;
+        background: linear-gradient(to right, #328ac4, #7cb0ce); /* Gradient background */
+        border-radius: 10px; /* Slightly rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+        text-transform: uppercase; /* Make text all uppercase */
+        letter-spacing: 1px; /* Add spacing for elegance */
+    }
+
+        /* Categories Section */
+        .categories {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 0px auto;
+            max-width: 70%;
+            align-items: center; /* Align boxes to the left */
+        }
+
+        .category-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: auto;
+            padding: 20px;
+            width: 100%;
+            max-width: 1000%;
+            align-items: center;
+        }
+
+        .category-card {
+            width: 200px;
+            height: 200px;
+            background-color: #ffcc80;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 16px;
+            color: black;
+            text-transform: capitalize;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image inside the card */
+        .category-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: filter 0.3s;
+        }
+
+        .category-card:hover img {
+            filter: blur(5px); /* Apply blur effect on hover */
+        }
+
+        /* Hidden sliding link (appears on hover) */
+        .category-card .popup-link {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px; /* Increased size */
+            border-radius: 8px; /* Rounded corners */
+            text-decoration: none;
+            font-size: 16px; /* Larger font */
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .category-card:hover .popup-link {
+            transform: translate(-50%, 0); /* Slide up on hover */
+            visibility: visible; /* Make visible on hover */
+            opacity: 1;
+        }
+
+        .popup-link:hover {
+            background-color: #33a589;
+        }
+
+        /* Text content beside the box */
+        .category-description {
+            max-width: 550px;
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .category-text {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        /* New button inside category-description */
+        .download-container {
+            margin-top: 15px; /* Add space before button */
+            text-align: center; /* Center the button */
+        }
+
+        .download-container .popup-link {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .download-container .popup-link:hover {
+            background-color: #33a589;
+        }
+
+        footer {
+            background-color: #282c34;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        /* Hide the checkbox but still allow interaction */
+        .modal-toggle-georgetown {
+            display: none;
+        }   
+
+        /* Modal styling for Georgetown section */
+        .modal-georgetown {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4); /* Black with opacity */
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        button, .popup-link, label {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        button:hover, .popup-link:hover, label:hover {
+            background-color: #33a589;
+        }
+
+        /* Show the modal when checkbox is checked for Georgetown section */
+        .modal-toggle-georgetown:checked + .modal-georgetown {
+            display: block;
+        }
+
+        /* Close button styling */
+        .close-btn {
+            display: inline-block;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <overflow-x: hidden;>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img class="logo" src="images/logo.png" alt="Logo">
+            <span class="logo-text">EXPLORE GEORGETOWN, A HERITAGE TO EXPLORE</span>
+        </div>
+        <nav>
+            <ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="heritage.html">Heritage</a></li>
+				<li><a href="attraction.html">Attraction</a></li>
+				<li><a href="aboutus.html">About Us</a></li>
+			</ul>
+        </nav>
+    </header>
+
+    <!-- Main Heading -->
+    <div class="main-heading">Welcome to Georgetown's Heritage Exploration</div> <!-- Add this section -->
+    
+    <div class="categories-wrapper">
+        <div class="category-wrapper">
+            <div class="category-card">
+                <img src="images/best_thing_activities.png" alt="11 Best Thing To Do in Penang">
+                <a href="https://www.saltinourhair.com/malaysia/penang-georgetown/" class="popup-link" target="_blank">Explore More</a>
+            </div>
+            <div class="category-description">
+                <div class="category-title">ACTIVITIES TO DO IN GEORGETOWN, PENANG</div>
+                <p class="category-text">
+                    Georgetown, on Penang Island, is the must-visit spot of Malaysia. The stunning colonial streets of Georgetown are a center for culture, street art, and the country’s best street food. The differences between Chinese houses and skyscrapers, 
+                    side by side, give this town a unique atmosphere.
+                </p>
+                <!-- New button inside description -->
+                <div class="download-container">
+                    <a href="https://drive.google.com/uc?export=download&id=1hxpd7SrSrviQtgE1v01hoBiNSIhy7W2s" download="11_Best_Thing_To_Do_in_Penang.warc" download="Copy of 31. 11 Best Thing To Do in Penang [YES].warc" class="popup-link">
+                        Download WARC File
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Popup for Georgetown Section -->
+    <div class="modal-georgetown">
+        <div class="modal-content">
+            <p>Note: You may encounter a warning about virus scanning; click "Download Anyway" to proceed.</p>
+            <a href="https://drive.google.com/uc?export=download&id=1hxpd7SrSrviQtgE1v01hoBiNSIhy7W2s" 
+               download="11_Best_Thing.warc" class="popup-link">Download Anyway</a>
+            <label for="show-warning-georgetown" class="close-btn">Close</label>
+        </div>
+    </div>
+    
+        <div class="category-wrapper">
+            <div class="category-card">
+                <img src="images/little_india.png" alt="Things to do in Little India">
+                <a href="https://www.penang-insider.com/little-india-penang-things-to-do/" class="popup-link" target="_blank">Explore More</a>
+            </div>
+            <div class="category-description">
+                <div class="category-title">THINGS TO DO IN LITTLE INDIA</div>
+                <p class="category-text">
+                    Welcome to Little India Penang, one of George Town's most colorful quarters, and a place that definitely has quite a number of things to do... read this article and hit the ground running.
+                </p>
+                <!-- New button inside description -->
+                <div class="download-container">
+                    <a href="https://drive.google.com/uc?export=download&id=1iHi3SX5b0q3JP3foWEioPXUNwsQcJEbK" download="Activities_to_do_Little_India.warc" download="Copy of 18. Activities to Do - Little India [NO].warc" class="popup-link">
+                        Download WARC File
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="category-wrapper">
+            <div class="category-card">
+                <img src="images/know_before_activities.png" alt="George Town, Penang, Malaysia: Know Before You Go">
+                <a href="https://travelationship.com/george-town-penang-malaysia-know-before-you-go/" class="popup-link" target="_blank">Explore More</a>
+            </div>
+            <div class="category-description">
+                <div class="category-title">KNOW BEFORE YOU GO: GEORGETOWN, PENANG MALAYSIA</div>
+                <p class="category-text">
+                    George Town, Malaysia, is a quaint little town located on the island of Penang in the Malacca Strait on the West side of Malaysia. Melaka and George Town were listed as UNESCO World Heritage Sites in 2008 for their multicultural heritage and architectural wonders.
+                </p>
+                <!-- New button inside description -->
+                <div class="download-container">
+                    <a href="https://drive.google.com/uc?export=download&id=1WM-LB06a6Zr02LnPzY0ReIERpamsA5Ba" download="Copy of 29.Know Before you go George Town Penang [YES].warc" class="popup-link">
+                        Download WARC File
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Georgetown Website Archive Repository. All rights reserved.</p>
+        </div>
+    </footer>
+</overflow-x:>
+</body>
+</html>
