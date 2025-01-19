@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georgetown Website Archive</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Main Heading */
+.main-heading {
+    margin: 20px auto;
+    font-size: 36px; /* Larger font size */
+    font-weight: 900; /* Boldest font weight */
+    text-align: center;
+    color: #bcbcbc; /* Deep contrasting color */
+    padding: 20px;
+    background-color: #2b28bd; /* Subtle background color */
+    border-radius: 10px;
+    text-transform: uppercase; /* Optional: Make all letters uppercase */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add shadow for emphasis */
+    border: 2px solid #003366; /* Optional: Add a border */
+}
+
+
+        /* Categories Section */
+        .categories {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin: 20px auto;
+            max-width: 90%;
+        }
+
+        .category-container {
+            display: flex;
+            flex-direction: row;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 90%;
+            max-width: 900px;
+        }
+
+        .category-card {
+            width: 250px;
+            perspective: 1000px;
+            border-right: 1px solid #ddd;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .category-card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 0;
+        }
+
+        .card-front {
+            background-color: #495493;
+            flex-direction: column;
+        }
+
+        .card-front img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card-front .title {
+            margin-top: 10px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .card-back {
+            background-color: #061422;
+            color: rgb(0, 0, 0);
+            transform: rotateY(180deg);
+            flex-direction: column;
+        }
+
+        .card-back .button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            background-color: #4a91de;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .card-back .button:hover {
+            background-color: #003d7a;
+        }
+
+        /* Description Section */
+        .category-description {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .category-description h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+
+        .category-description p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        /* Footer Section */
+        footer {
+            margin-top: 20px;
+            background-color: #282c34;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img class="logo" src="images/logo.png" alt="Logo">
+            <span class="logo-text">EXPLORE GEORGETOWN, A HERITAGE TO EXPLORE</span>
+        </div>
+        <nav>
+            <ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="heritage.html">Heritage</a></li>
+				<li><a href="attraction.html">Attraction</a></li>
+				<li><a href="aboutus.html">About Us</a></li>
+			</ul>
+        </nav>
+    </header>
+
+    <!-- Main Heading -->
+    <div class="main-heading">Discover Unique Places</div>
+
+    <!-- Categories Section -->
+    <div class="categories">
+        <!-- Category 1 -->
+        <div class="category-container">
+            <div class="category-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="images/little_india_places.png">
+                    </div>
+                    <div class="card-back">
+                        <a href="https://sg.trip.com/travel-guide/attraction/george-town/penang-little-india-96281/" class="button" target="_blank">Explore More</a>
+                        <a href="https://drive.google.com/uc?export=download&id=1gQFDLr_KH84i9FIEJv9CP95sgVCm63F5" download="Copy of 22. Features & Attractions - Penang Little India Highlights [YES].warc " class="button">
+                            Download WARC File
+                        </a>
+                        <p style="font-size: 12px; text-align: center; color: gray;">Note: You may encounter a warning about virus scanning; click "Download Anyway" to proceed.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="category-description">
+                <h3>Penang Little India</h3>
+                <p>A bustling enclave capturing Indian culture with vibrant shops, food, and cultural performances.</p>
+            </div>
+        </div>
+
+        <!-- Category 2 -->
+        <div class="category-container">
+            <div class="category-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="images/masjid_kapitan_places.png">
+                    </div>
+                    <div class="card-back">
+                        <a href="https://www.caridestinasi.com/masjid-kapitan-keling-penang/" class="button" target="_blank">Explore More</a>
+                        <a href="https://drive.google.com/uc?export=download&id=1ZvHHxcMx44LLwJed-H0cheHnPHWoPng7" 
+                        download="Copy of 10.Oldest Mosque in Penang - Masjid Kapitan Keling [NO].warc" class="button">Download WARC File</a>
+                        <p style="font-size: 12px; text-align: center; color: gray;">Note: You may encounter a warning about virus scanning; click "Download Anyway" to proceed.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="category-description">
+                <h3>Masjid Kapitan Keling</h3>
+                <p>This mosque in Georgetown showcases stunning Indo-Moorish architecture and a serene atmosphere.</p>
+            </div>
+        </div>
+        
+        <!-- Category 3 -->
+        <div class="category-container">
+            <div class="category-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="images/clan_jetties_places.png">
+                    </div>
+                    <div class="card-back">
+                        <a href="https://www.awaygowe.com/clan-jetties-of-penang/" class="button" target="_blank">Explore More</a>
+                        <a href="https://drive.google.com/uc?export=download&id=1d2JdjqNGgmDGkIW3fRnKoclZQOnzTdTR" 
+                        download="Copy of 2.Clan Jetties of Penang - George Town's Historic Floating Villages [NO].warc" class="button">
+                            Download WARC File
+                        </a>
+                        <p style="font-size: 12px; text-align: center; color: gray;">Note: You may encounter a warning about virus scanning; click "Download Anyway" to proceed.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="category-description">
+                <h3>Clan Jetties</h3>
+                <p>Experience the unique floating village life at the historical Clan Jetties of Penang.</p>
+            </div>
+        </div>
+
+        <!-- Category 4 -->
+        <div class="category-container">
+            <div class="category-card">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <img src="images/kuan_temple_places.png">
+                    </div>
+                    <div class="card-back">
+                        <a href="https://penang.attractionsinmalaysia.com/Kuan-Yin-temple.php" class="button" target="_blank">Explore More</a>
+                        <a href="https://drive.google.com/uc?export=download&id=10E_PGGyuDg_OmJcIx7DkeBAop6aNm0Hg" 
+                        download="Copy of 14.Attraction Site - Kuan Yin Teng Temple Penang [YES].warc" class="button">Download WARC File</a>
+                        <p style="font-size: 12px; text-align: center; color: gray;">Note: You may encounter a warning about virus scanning; click "Download Anyway" to proceed.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="category-description">
+                <h3>Kuan Yin Temple</h3>
+                <p>A serene and historic Chinese temple dedicated to the Goddess of Mercy, located in Georgetown.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Georgetown Website Archive Repository. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

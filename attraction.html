@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Georgetown Website Archive</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        /* Parent container for cards */
+        .flip-card-container {
+            display: flex;
+            justify-content: center; /* Center align cards horizontally */
+            gap: 20px; /* Add spacing between cards */
+            margin: 20px;
+        }
+
+        /* Flip cards */
+        .flip-card {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-weight: bold;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .flip-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure image fits within the card dimensions */
+            border-radius: 10px;
+        }
+
+        /* Button container below each card */
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .explore-btn:hover {
+            background-color: darkgray;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #f4f4f4;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img class="logo" src="images/logo.png" alt="Logo">
+            <span class="logo-text">EXPLORE GEORGETOWN, A HERITAGE TO EXPLORE</span>
+        </div>
+        <nav>
+            <ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="heritage.html">Heritage</a></li>
+				<li><a href="attraction.html">Attraction</a></li>
+				<li><a href="aboutus.html">About Us</a></li>
+			</ul>
+        </nav>
+    </header>
+
+    <header>
+        <h1>Attractions in Georgetown</h1>
+        <p>Explore the captivating attractions Georgetown has to offer.</p>
+    </header>
+
+    <!-- Flip Card Section -->
+    <div class="flip-card-container">
+        <!-- First Card -->
+        <div class="card-container">
+            <div class="flip-card">
+                <img src="images/attraction_img/activities_button.jpg" alt="Activities">
+            </div>
+            <a href="activities.html" class="explore-btn">Visit Activities!</a>
+        </div>
+
+        <!-- Second Card -->
+        <div class="card-container">
+            <div class="flip-card">
+                <img src="images/attraction_img/Nasi-Kandar.jpg" alt="Food">
+            </div>
+            <a href="food.html" class="explore-btn">Visit Food!</a>
+        </div>
+
+        <!-- Third Card -->
+        <div class="card-container">
+            <div class="flip-card">
+                <img src="images/attraction_img/places.jpg" alt="Places">
+            </div>
+            <a href="places.html" class="explore-btn">Visit Places!</a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Georgetown Website Archive Repository. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
